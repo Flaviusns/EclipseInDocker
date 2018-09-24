@@ -17,15 +17,15 @@ eclipse photon into a docker container.
 
 Build the Dockerfile:
 
-docker build -t yourimagename .
+`docker build -t yourimagename .`
 
 Once the image its build, run the docker image:
 
-docker run -p 5901:5901 -t -i yourimagename
+`docker run -p 5901:5901 -t -i yourimagename`
 
 Inside your docker container, execute the following commands:
 
-vnc4server -geometry 1920x1080
+`vnc4server -geometry 1920x1080`
 You can change the resolution as you want.
 
 When you execute this command, the terminal will promt a petition with a **password**.
@@ -33,11 +33,11 @@ Create your **password** and once the password it´s verificated the program wil
 
 When you have your unique code, copy and execute the next command:
 
-export DISPLAY=yourdisplayuniquecode
+`export DISPLAY=yourdisplayuniquecode`
 
-// Example:
+`// Example:`
 
-export DISPLAY=91d0dfa2b3b5:1
+`export DISPLAY=91d0dfa2b3b5:1`
 
 Finally change to your Eclipse folder, by default:
 `EclipseIDE/eclipse` and execute `./eclipse` . 
