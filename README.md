@@ -25,7 +25,7 @@ Eclipse will be open in your x11 client window.
 This docker was tested in macOS Mojave.
 
 To use it in macOS, follow the next instrucctions [here](https://fredrikaverpil.github.io/2016/07/31/docker-for-mac-and-gui-applications/) .
-Xquartz works fine with the current version of xquartz 2.7.11 . Thanks to Fredrik  for the blog.
+Xquartz works fine with the current version 2.7.11 . Thanks to Fredrik  for the blog.
 
 
 **Importan Details**
