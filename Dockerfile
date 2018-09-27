@@ -18,11 +18,14 @@ RUN echo "Installing Eclipse" && \
     wget -O eclipse_IDLE.tar.gz http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/technology/epp/downloads/release/2018-09/R/eclipse-dsl-2018-09-linux-gtk-x86_64.tar.gz && \
 	mkdir EclipseIDE && \
 	tar -xzvf eclipse_IDLE.tar.gz -C EclipseIDE/ && \
-	rm -f eclipse_IDLE.tar.gz 
+	rm -f eclipse_IDLE.tar.gz \ 
+    rm -f EclipseIDE/eclipse/eclipse.ini
 
-# Install vnc4server
-RUN echo "Installing vnc4server" && \
-   apt-get install -y vnc4server 
+COPY eclipse.ini EclipseIDE/eclipse/
+
+ENTRYPOINT [ "/EclipseIDE/eclipse/eclipse" ]
+
+
 
 
 
