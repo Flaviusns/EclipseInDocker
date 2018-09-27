@@ -1,49 +1,37 @@
 
 
 
-## Eclipse Papyrus in Docker
+## Eclipse in Docker
 
 
 This is the EclipsePhotonPapyrusDocker that contains the dockerfile wich it´s able to run
-eclipse photon into a docker container.
-
-**Actual Limitation:**
-
-- Eclipse isn´t in full screen.
-- VNC conection.
-- Its not completely automated.
+eclipse photon into a docker container. Now we connect to eclipse with x11 sockets
 
 **How to use:**
 
+Download the zip file.
+
 Build the Dockerfile:
 
-`docker build -t yourimagename .`
+`docker build -t yourimagename .`  Inside the folder with the Dockerfile. 
 
 Once the image its build, run the docker image:
 
-`docker run -p 5901:5901 -t -i yourimagename`
+`docker run -d  -e DISPLAY=$ip:0 -v /tmp/.X11-unix:/tmp/.X11-unix yourimagename` 
 
-Inside your docker container, execute the following commands:
+Eclipse will be open in your x11 client window.
 
-`vnc4server -geometry 1920x1080`
-You can change the resolution as you want.
 
-When you execute this command, the terminal will promt a petition with a **password**.
-Create your **password** and once the password it´s verificated the program will say the display unique code.
+This docker was tested in macOS Mojave.
 
-When you have your unique code, copy and execute the next command:
+To use it in macOS, follow the next instrucctions [here](https://fredrikaverpil.github.io/2016/07/31/docker-for-mac-and-gui-applications/) .
+Xquartz works fine with the current version of xquartz 2.7.11 . Thanks to Fredrik  for the blog.
 
-`export DISPLAY=yourdisplayuniquecode`
 
-`// Example:`
+**Importan Details**
 
-`export DISPLAY=91d0dfa2b3b5:1`
+- Eclipse use 1024m of memory, by default is 256m, I changed to 1024m by copy the init file into the eclipse directory. If you want to make more changes change the init file and built the image again.
 
-Finally change to your Eclipse folder, by default:
-`EclipseIDE/eclipse` and execute `./eclipse` . 
-
-Open your favorite vnc client and connect to `127.0.0.1:5901`.
-Eclipse will be open in your vnc client window.
 
 
 
