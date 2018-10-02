@@ -21,6 +21,8 @@ RUN echo "Installing Eclipse" && \
 	rm -f eclipse_IDLE.tar.gz \ 
     rm -f EclipseIDE/eclipse/eclipse.ini
 
+RUN mkdir EclipseIDE/eclipse/Projects
+
 COPY eclipse.ini EclipseIDE/eclipse/
 
 ENTRYPOINT [ "/EclipseIDE/eclipse/eclipse" ]
