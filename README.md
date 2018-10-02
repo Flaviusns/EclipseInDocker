@@ -7,6 +7,12 @@
 This is the EclipsePhotonPapyrusDocker that contains the dockerfile wich it´s able to run
 eclipse photon into a docker container. Now we connect to eclipse with x11 sockets
 
+**How to use (common) with Docker Repository:**
+
+If you don´t want to build your image locally, donwload only de docker-compose-DockerRepository.yml file, change it name to `docker-compose.yml` and execute `docker-compose up` in the same directory.
+It will download a Docker Repository Image with the image already built.
+
+
 **How to use (common):**
 
 Download the zip file.
