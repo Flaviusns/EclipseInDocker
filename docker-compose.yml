@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  app:
+    image: yourImageName
+    environment:
+      - DISPLAY=hostnameHere:0
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - .:/EclipseIDE/eclipse/Projects
