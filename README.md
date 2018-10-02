@@ -4,7 +4,7 @@
 ## Eclipse in Docker
 
 
-This is the EclipsePhotonPapyrusDocker that contains the dockerfile wich it´s able to run
+This is the EclipsePhotonDocker that contains the dockerfile wich it´s able to run
 eclipse photon into a docker container. Now we connect to eclipse with x11 sockets
 
 **How to use (common):**
